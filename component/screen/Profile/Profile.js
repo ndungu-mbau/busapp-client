@@ -14,7 +14,6 @@ const searchIcon = (<MaterialIcons name="search" size={20} color="#fff" />)
 
 
 export default class Profile extends Component {
-    _isMounted = false;
     constructor(props){
         super(props)
 
@@ -35,12 +34,10 @@ export default class Profile extends Component {
             size: 90,
             color: "#324191"
         }
-        this.setDate = this.setDate.bind(this)
         
     }
 
     componentDidMount = () => {
-        this._isMounted = true;
         setInterval(()=>{
             AsyncStorage.getItem('state_data', (error, res) => {
                 let d = JSON.parse(res)
@@ -60,10 +57,6 @@ export default class Profile extends Component {
             })
         },2000)
       
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
     }
 
     _pointAllData = () => {
@@ -101,7 +94,10 @@ export default class Profile extends Component {
                 { cancelable: false }
               )
         }else{ 
-            this.props.navigation.navigate('journeydetails', { data : this.state,settings : this.state.settings})
+            this.props.navigation.navigate('journeydetails', {
+                data: this.state,
+                settings: this.state.settings,
+            })
         }
     }
 
@@ -157,7 +153,7 @@ export default class Profile extends Component {
         })
     }
 
-    setDate(newDate) {
+    setDate = (newDate) => {
 
         let d = new Date(newDate),
         month = '' + (d.getMonth() + 1),

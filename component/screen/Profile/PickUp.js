@@ -40,8 +40,8 @@ export default class PickUp extends Component {
             seatdataInfo : '',
             userDat :this.props.navigation.state.params.userDat,
 
-            pickupData : '',
-            dropData : '',
+            pickupData : this.props.navigation.state.params.userDat.data.startPointVal,
+            dropData : this.props.navigation.state.params.userDat.data.endPointVal,
 
             adult : '',
             child : '',
@@ -74,6 +74,7 @@ export default class PickUp extends Component {
             return <View></View>
         }else{
         return this.state.seatdataInfo.stopages.map( (data , i) => {
+            console.log({ data, i })
             return  <Item key={'f' + i} label={data} value={data} />
         })
         }
@@ -212,7 +213,9 @@ export default class PickUp extends Component {
             }
     }
 
-    _keyExtractor = (item, index) => item;
+    _keyExtractor = (item, index) => {
+        return `${index}-${item}`
+    }
 
     _onPressItem = (id) => {
         this.setState((state) => {
@@ -292,7 +295,7 @@ export default class PickUp extends Component {
                     <ScrollView>
                         <View style={styles.AllDataVal}>
                             
-                            <View style={{marginBottom:10}}>
+                            {/* <View style={{marginBottom:10}}>
                                 <View style={{marginBottom:8}}>
                                     <Text style={styles.locationDet}>{this.state.settings.pickup_location}</Text>
                                 </View>
@@ -303,13 +306,12 @@ export default class PickUp extends Component {
                                             selectedValue={this.state.pickupData}
                                             onValueChange={this.onpickupValueChange.bind(this)}
                                             >
-                                            <Item key='k' label={this.state.settings.select_pickup_location} value='' />
                                             { this._getpickupData() }
                                         </Picker>
                                 </View>
-                            </View>
+                            </View> */}
 
-                            <View style={{marginBottom:10}}>
+                            {/* <View style={{marginBottom:10}}>
                                 <View style={{marginBottom:8}}>
                                     <Text style={styles.locationDet}>{this.state.settings.drop_location}</Text>
                                 </View>
@@ -320,11 +322,10 @@ export default class PickUp extends Component {
                                             selectedValue={this.state.dropData}
                                             onValueChange={this.ondropValueChange.bind(this)}
                                             >
-                                            <Item key='k' label={this.state.settings.select_drop_location} value='' />
                                             { this._getpickupData() }
                                         </Picker>
                                 </View>
-                            </View>
+                            </View> */}
 
                             <View style={{flexDirection:'row',marginBottom:10, }}>
 

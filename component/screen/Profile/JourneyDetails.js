@@ -24,7 +24,6 @@ export default class JourneyDetails extends Component {
   }
 
   componentDidMount = () =>{
-
           axios.get(`${this.state.settings.base_url}Api/search?start_point=${this.state.data.startPointVal}&end_point=${this.state.data.endPointVal}&date=${this.state.data.chosenDate}&fleet_type=${this.state.data.fleetsData}`)
             .then(res => {
                 this.setState({
@@ -40,7 +39,7 @@ export default class JourneyDetails extends Component {
   _seatplan = (val, ava) =>{
     const day = this.state.searchdataInfo.date
     const fleetType = this.state.searchdataInfo.fleet_type
-    this.props.navigation.navigate('pickUp', {infodata: this.state,data : val, day :day, fleetType : fleetType, userDat : this.state, ava : ava, settings : this.state.settings})
+    this.props.navigation.navigate('pickUp', {infodata: this.state, data : val, day :day, fleetType : fleetType, userDat : this.state, ava : ava, settings : this.state.settings})
     // console.log(ava)
   }
 

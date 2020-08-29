@@ -19,7 +19,6 @@ import axios from 'axios';
 import Spinner from 'react-native-spinkit';
 
 export default class Login extends Component {
-  _isMounted = false;
   constructor(props) {
     super(props);
 
@@ -49,7 +48,6 @@ export default class Login extends Component {
   };
 
   componentDidMount() {
-    this._isMounted = true;
     SplashScreen.close({
       animationType: SplashScreen.animationType.scale,
       duration: 3100,
@@ -57,10 +55,6 @@ export default class Login extends Component {
     });
 
     this._callwebSettings();
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
   }
 
   _callwebSettings() {
@@ -84,7 +78,7 @@ export default class Login extends Component {
   };
 
   _loginBus365() {
-    if (this.state.email == '' || this.state.pass == '') {
+    if (this.state.email === '' || this.state.pass === '') {
       Alert.alert(
         this.state.settings.settings.title,
         this.state.settings.must_put_email_pass,
@@ -109,8 +103,7 @@ export default class Login extends Component {
           `${this.state.settings.base_url}Api/login?email=${this.state.email}&password=${this.state.pass}`,
         )
         .then((res) => {
-          if (res.data.response.status == 'ok') {
-            this.props.navigation.navigate('dash');
+          if (res.data.response.status === 'ok') {
             this.setState({
               email: '',
               pass: '',
@@ -124,6 +117,7 @@ export default class Login extends Component {
               'user_data',
               JSON.stringify(res.data.response.user_data),
             );
+            this.props.navigation.navigate('dash');
           } else {
             Alert.alert(
               this.state.settings.settings.title,
