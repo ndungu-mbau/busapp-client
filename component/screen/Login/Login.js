@@ -32,7 +32,7 @@ export default class Login extends Component {
       loading: true,
       size: 90,
       color: '#324191',
-      base_url: 'http://moveit.ellixar.com/',
+      base_url: 'https://moveit.ellixar.com/',
     };
 
     AsyncStorage.getItem('intro_tokenr', (err, result) => {
