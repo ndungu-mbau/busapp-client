@@ -37,7 +37,7 @@ export default class PickUp extends Component {
             data : this.props.navigation.state.params.data,
             day : this.props.navigation.state.params.day,
             fleetType : this.props.navigation.state.params.fleetType,
-            seatdataInfo : '',
+            seatdataInfo : {},
             userDat :this.props.navigation.state.params.userDat,
 
             pickupData : this.props.navigation.state.params.userDat.data.startPointVal,
@@ -70,8 +70,9 @@ export default class PickUp extends Component {
     }
 
     _getpickupData = () => {
-        if(this.state.seatdataInfo == ''){
-            return <View></View>
+        console.log(this.state.seatdataInfo)
+        if(Object.keys(this.state.seatdataInfo).length == 0){
+            return <Item label="Blank" value="blank" />
         }else{
         return this.state.seatdataInfo.stopages.map( (data , i) => {
             console.log({ data, i })
@@ -295,7 +296,7 @@ export default class PickUp extends Component {
                     <ScrollView>
                         <View style={styles.AllDataVal}>
                             
-                            {/* <View style={{marginBottom:10}}>
+                            <View style={{marginBottom:10}}>
                                 <View style={{marginBottom:8}}>
                                     <Text style={styles.locationDet}>{this.state.settings.pickup_location}</Text>
                                 </View>
@@ -309,9 +310,9 @@ export default class PickUp extends Component {
                                             { this._getpickupData() }
                                         </Picker>
                                 </View>
-                            </View> */}
+                            </View>
 
-                            {/* <View style={{marginBottom:10}}>
+                            <View style={{marginBottom:10}}>
                                 <View style={{marginBottom:8}}>
                                     <Text style={styles.locationDet}>{this.state.settings.drop_location}</Text>
                                 </View>
@@ -325,7 +326,7 @@ export default class PickUp extends Component {
                                             { this._getpickupData() }
                                         </Picker>
                                 </View>
-                            </View> */}
+                            </View>
 
                             <View style={{flexDirection:'row',marginBottom:10, }}>
 
