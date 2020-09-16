@@ -12,7 +12,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 
-import SplashScreen from 'react-native-smart-splash-screen';
+// import SplashScreen from 'react-native-smart-splash-screen';
 import {Container, Icon, Content} from 'native-base';
 
 import axios from 'axios';
@@ -48,11 +48,11 @@ export default class Login extends Component {
   };
 
   componentDidMount() {
-    SplashScreen.close({
-      animationType: SplashScreen.animationType.scale,
-      duration: 3100,
-      delay: 600,
-    });
+    // SplashScreen.close({
+    //   animationType: SplashScreen.animationType.scale,
+    //   duration: 3100,
+    //   delay: 600,
+    // });
 
     this._callwebSettings();
   }
