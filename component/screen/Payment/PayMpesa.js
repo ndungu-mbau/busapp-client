@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, Image, TouchableOpacity, ScrollView,Alert, Asyn
 import { Container, Header,Body , Right, Left, Icon, Content, Picker,DatePicker, Row , Button} from 'native-base'
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import qs from "qs"
 import axios from 'axios'
 
 export default class PayMpesa extends Component {
@@ -26,10 +27,17 @@ export default class PayMpesa extends Component {
     }
     
     _confirmBooking = async () =>{
-        const { data } = await axios.post(`${this.state.settings.base_url}payment-stk-push`, {
-            booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
-            phone_num: this.state.profile.phone,
-            amount: this.state.total
+        const { data } = await axios({
+            url: `${this.state.settings.base_url}payment-stk-push`,
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: qs.stringify({
+                booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
+                phone_num: this.state.profile.phone,
+                amount: this.state.total
+            })
         })
         console.log(data)
             // .then(res => {
