@@ -4,6 +4,7 @@ import { Container, Header,Body , Right, Left, Icon, Content, Picker,DatePicker,
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import qs from "qs"
+import { throttle } from "lodash"
 import axios from 'axios'
 
 export default class PayMpesa extends Component {
@@ -18,7 +19,8 @@ export default class PayMpesa extends Component {
             fullName : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa.firstname,
             lastname : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa.lastname,
             booking_id: this.props.navigation.state.params.allData.allDataInfo.bookid,
-            total: this.props.navigation.state.params.allData.allDataInfo.allinfoData.total
+            total: this.props.navigation.state.params.allData.allDataInfo.allinfoData.total,
+            merchant_id: ""
         }
     }
 
@@ -39,25 +41,55 @@ export default class PayMpesa extends Component {
                 amount: this.state.total
             })
         })
+
         console.log(data)
-            // .then(res => {
-                
-            //     // Alert.alert(
-            //     //     this.state.settings.settings.title,
-            //     //     this.state.settings.your_booking_complete,
-            //     //     [
-            //     //       {},
-            //     //       {},
-            //     //       {text: 'OK', onPress: () => this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa})},
-            //     //     ],
-            //     //     { cancelable: false }
-            //     //   )
-            //     // setTimeout(() => {
-            //     //     this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa ,settings : this.state.settings})
-            //     //     // console.log(this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa)
-            //     // },5000)
-            // })
-            // .catch(err => console.log(err.response))
+
+        if(data.merchant_id != null){
+            this.setState({ merchant_id: data.merchant_id })
+            let payment_data = {
+                paid: false,
+                phone: "Fail"
+            }
+
+            const getPaymentDetails = throttle(async () => {
+                const { data : pay } = await axios({
+                    url: `${this.state.settings.base_url}payment-check`,
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data: qs.stringify({
+                        booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
+                        merchant_id: data.merchant_id,
+                    })
+                })
+                return pay
+            }, 1000)
+
+            while(payment_data.paid === false){
+                payment_data = await getPaymentDetails()
+                console.log(payment_data)
+            }
+
+            if(payment_data.paid === true){
+                Alert.alert(
+                    this.state.settings.settings.title,
+                    this.state.settings.your_booking_complete,
+                    [
+                      {},
+                      {},
+                      {text: 'OK', onPress: () => this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa})},
+                    ],
+                    { cancelable: false }
+                  )
+                setTimeout(() => {
+                    this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa ,settings : this.state.settings})
+                    // console.log(this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa)
+                },5000)
+            }
+        } else {
+
+        }
     }
 
   render() {
