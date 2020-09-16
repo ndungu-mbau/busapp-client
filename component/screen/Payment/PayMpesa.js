@@ -25,26 +25,31 @@ export default class PayMpesa extends Component {
        
     }
     
-    _confirmBooking = () =>{
-        axios.get(`${this.state.settings.base_url}payment-stk-push?booking_id_no=${this.state.allDataInfo.allDataInfo.bookid}&phone_num=${this.state.profile.phone}&amount=${this.state.total}`)
-            .then(res => {
-                console.log(res)
-                // Alert.alert(
-                //     this.state.settings.settings.title,
-                //     this.state.settings.your_booking_complete,
-                //     [
-                //       {},
-                //       {},
-                //       {text: 'OK', onPress: () => this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa})},
-                //     ],
-                //     { cancelable: false }
-                //   )
-                // setTimeout(() => {
-                //     this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa ,settings : this.state.settings})
-                //     // console.log(this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa)
-                // },5000)
-            })
-            .catch(err => console.log(err.response))
+    _confirmBooking = async () =>{
+        const { data } = await axios.post(`${this.state.settings.base_url}payment-stk-push`, {
+            booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
+            phone_num: this.state.profile.phone,
+            amount: this.state.total
+        })
+        console.log(data)
+            // .then(res => {
+                
+            //     // Alert.alert(
+            //     //     this.state.settings.settings.title,
+            //     //     this.state.settings.your_booking_complete,
+            //     //     [
+            //     //       {},
+            //     //       {},
+            //     //       {text: 'OK', onPress: () => this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa})},
+            //     //     ],
+            //     //     { cancelable: false }
+            //     //   )
+            //     // setTimeout(() => {
+            //     //     this.props.navigation.navigate('profile', { userDa : this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa ,settings : this.state.settings})
+            //     //     // console.log(this.props.navigation.state.params.allData.allDataInfo.allinfoData.data.infodata.data.userDa)
+            //     // },5000)
+            // })
+            // .catch(err => console.log(err.response))
     }
 
   render() {
