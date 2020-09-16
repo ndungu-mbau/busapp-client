@@ -31,6 +31,7 @@ export default class SeatPlan extends Component {
         let countP = ((this.props.navigation.state.params.pickup.adult *1) + (this.props.navigation.state.params.pickup.child*1) + (this.props.navigation.state.params.pickup.special*1))
         this.state = {
             data : this.props.navigation.state.params.pickup,
+            profile: this.props.navigation.state.params.pickup.infodata.data.userDa,
             settings : this.props.navigation.state.params.settings,
             seatdataInfo : this.props.navigation.state.params.pickup.seatdataInfo,
             colorChangeItem : false,
@@ -208,7 +209,7 @@ export default class SeatPlan extends Component {
                         resp : res.data.response
                     })
                     if(res.data.response.total_seat == this.state.seatsize){
-                        this.props.navigation.navigate('passenger', { userInfo : this.state,settings : this.state.settings})
+                        this.props.navigation.navigate('passenger', { userInfo : this.state,settings : this.state.settings, profile: this.state.profile })
                     }else{
                         Alert.alert(
                             this.state.settings.settings.title,

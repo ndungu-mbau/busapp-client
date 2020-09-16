@@ -14,6 +14,7 @@ export default class Payment extends Component {
         this.state = {
             allDataInfo : this.props.navigation.state.params.pay,
             settings : this.props.navigation.state.params.settings,
+            profile: this.props.navigation.state.params.profile,
             isChecked : false
         }
     }
@@ -93,6 +94,26 @@ export default class Payment extends Component {
                             </View>
                             <View style={{flex:5}}>
                                 <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.bank_transfer}</Text>
+                            </View>
+                            <View style={{flex:1, marginTop:10}}>
+                                {icon}
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                    onPress={()=> this.props.navigation.navigate('paympesa', {allData : this.state,settings : this.state.settings, profile: this.state.profile })}
+                    style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
+                        
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{flex:2}}>
+                                <Image
+                                    style={styles.payimg}
+                                    source={require('../../assets/mpesa.png')}
+                                />
+                            </View>
+                            <View style={{flex:5}}>
+                                <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>MPESA Payment</Text>
                             </View>
                             <View style={{flex:1, marginTop:10}}>
                                 {icon}

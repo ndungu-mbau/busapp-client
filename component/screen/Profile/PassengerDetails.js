@@ -12,6 +12,7 @@ export default class PassengerDetails extends Component {
 
         this.state = {
             settings : this.props.navigation.state.params.settings,
+            profile: this.props.navigation.state.params.profile,
             allinfoData : this.props.navigation.state.params.userInfo,
             bookid : this.props.navigation.state.params.userInfo.bookid,
             seatNum : this.props.navigation.state.params.userInfo.seatNum,
@@ -28,7 +29,7 @@ export default class PassengerDetails extends Component {
 
     getBookingHistoryId =()=>{
         if(this.state.isChecked){
-            this.props.navigation.navigate('pay', { pay : this.state, settings : this.state.settings})
+            this.props.navigation.navigate('pay', { pay : this.state, settings : this.state.settings, profile: this.state.profile })
         }else{
             Alert.alert(
                 this.state.settings.settings.title,

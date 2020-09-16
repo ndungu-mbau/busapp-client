@@ -21,6 +21,7 @@ import ForgetPass from './component/screen/Login/ForgetPass';
 import PayPaypal from './component/screen/Payment/PayPaypal';
 import PayBank from './component/screen/Payment/PayBank';
 import PayCash from './component/screen/Payment/PayCash';
+import PayMpesa from './component/screen/Payment/PayMpesa';
 import EditProfile from './component/screen/Profile/EditProfile';
 import ViewProfile from './component/screen/Profile/ViewProfile';
 import SideDrawerPage from './component/screen/Profile/SideDrawerPage';
@@ -56,6 +57,9 @@ const myDrawer = DrawerNavigator(
     },
     paycash: {
       screen: PayCash,
+    },
+    paympesa: {
+      screen: PayMpesa,
     },
     sidedrawer: {
       screen: SideDrawerPage,
