@@ -4,8 +4,9 @@ import { Container, Header,Body , Right, Left, Icon, Content, Picker,DatePicker,
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import qs from "qs"
-import { throttle } from "lodash"
 import axios from 'axios'
+
+const sleep = duration => new Promise(resolve => setTimeout(() => resolve(), duration * 1000))
 
 export default class PayMpesa extends Component {
 
@@ -36,10 +37,14 @@ export default class PayMpesa extends Component {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             data: qs.stringify({
-                booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
+                booking_id_no : this.state.booking_id,
                 phone_num: this.state.profile.phone,
                 amount: this.state.total
-            })
+            }),
+            transformRequest(data){
+                console.log(data)
+                return data
+            },
         })
 
         console.log(data)
@@ -51,7 +56,7 @@ export default class PayMpesa extends Component {
                 phone: "Fail"
             }
 
-            const getPaymentDetails = throttle(async () => {
+            const getPaymentDetails = async () => {
                 const { data : pay } = await axios({
                     url: `${this.state.settings.base_url}payment-check`,
                     method: 'post',
@@ -59,19 +64,30 @@ export default class PayMpesa extends Component {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
                     data: qs.stringify({
-                        booking_id_no : this.state.allDataInfo.allDataInfo.bookid,
-                        merchant_id: data.merchant_id,
-                    })
+                        booking_id_no : this.state.booking_id,
+                        account: data.merchant_id,
+                    }),
+                    transformRequest(data){
+                        console.log(data)
+                        return data
+                    },
                 })
                 return pay
-            }, 1000)
+            }
 
-            while(payment_data.paid === false){
+            Alert.alert("Processing...","Hang on just a minute and we'll process your transaction.", [], {cancelable: true})
+
+            // await sleep(30)
+
+            while(payment_data.paid !== true){
+                await sleep(1)
                 payment_data = await getPaymentDetails()
                 console.log(payment_data)
             }
 
             if(payment_data.paid === true){
+                const { data } = await axios.get(`${this.state.settings.base_url}website/paypal/paymentmpesa/${this.state.booking_id}`)
+                console.log(data)
                 Alert.alert(
                     this.state.settings.settings.title,
                     this.state.settings.your_booking_complete,
@@ -88,7 +104,10 @@ export default class PayMpesa extends Component {
                 },5000)
             }
         } else {
-
+            Alert.alert(
+                "Uh Oh",
+                "Something seems to have gone wrong, but we'll look at it.",
+              )
         }
     }
 
