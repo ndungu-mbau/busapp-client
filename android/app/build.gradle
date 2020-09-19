@@ -130,7 +130,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.busapp"
+        applicationId "com.moveit.busapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
