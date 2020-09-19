@@ -61,46 +61,6 @@ export default class Payment extends Component {
                         <Text style={styles.locationDet}>{this.state.settings.select_your_payment_method}</Text>
                     </View>
 
-                    <TouchableOpacity 
-                    onPress={()=> this.props.navigation.navigate('paypaypal', {allData : this.state,settings : this.state.settings})}
-                    style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
-                        
-                        <View style={{flexDirection:'row'}}>
-                            <View style={{flex:2}}>
-                                <Image
-                                    style={styles.payimg}
-                                    source={require('../../assets/paypal.png')}
-                                />
-                            </View>
-                            <View style={{flex:5}}>
-                                <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.paypal}</Text>
-                            </View>
-                            <View style={{flex:1, marginTop:10}}>
-                                {icon}
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity 
-                    onPress={()=> this.props.navigation.navigate('paybank', {allData : this.state,settings : this.state.settings})}
-                    style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
-                        
-                        <View style={{flexDirection:'row'}}>
-                            <View style={{flex:2}}>
-                                <Image
-                                    style={styles.payimg}
-                                    source={require('../../assets/bank.png')}
-                                />
-                            </View>
-                            <View style={{flex:5}}>
-                                <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.bank_transfer}</Text>
-                            </View>
-                            <View style={{flex:1, marginTop:10}}>
-                                {icon}
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-
                     <TouchableOpacity
                     onPress={()=> this.props.navigation.navigate('paympesa', {allData : this.state,settings : this.state.settings, profile: this.state.profile })}
                     style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
@@ -134,6 +94,46 @@ export default class Payment extends Component {
                             </View>
                             <View style={{flex:5}}>
                                 <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.cash_payment}</Text>
+                            </View>
+                            <View style={{flex:1, marginTop:10}}>
+                                {icon}
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    onPress={()=> this.props.navigation.navigate('paybank', {allData : this.state,settings : this.state.settings})}
+                    style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
+                        
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{flex:2}}>
+                                <Image
+                                    style={styles.payimg}
+                                    source={require('../../assets/bank.png')}
+                                />
+                            </View>
+                            <View style={{flex:5}}>
+                                <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.bank_transfer}</Text>
+                            </View>
+                            <View style={{flex:1, marginTop:10}}>
+                                {icon}
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    onPress={()=> this.props.navigation.navigate('paypaypal', {allData : this.state,settings : this.state.settings})}
+                    style={{borderWidth:2, borderColor:'#e3e3e3',paddingHorizontal:10, paddingVertical:10, marginBottom:20}}>
+                        
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{flex:2}}>
+                                <Image
+                                    style={styles.payimg}
+                                    source={require('../../assets/paypal.png')}
+                                />
+                            </View>
+                            <View style={{flex:5}}>
+                                <Text style={{fontFamily: 'Montserrat-SemiBold',marginTop:9,fontSize:16, paddingHorizontal:15, color:'#003085'}}>{this.state.settings.paypal}</Text>
                             </View>
                             <View style={{flex:1, marginTop:10}}>
                                 {icon}
