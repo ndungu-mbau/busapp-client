@@ -209,9 +209,7 @@ export default {
   toolbarDefaultBorder: platform === PLATFORM.IOS ? '#a7a6ab' : '#3F51B5',
   iosStatusbar: platform === PLATFORM.IOS ? 'dark-content' : 'light-content',
   get statusBarColor() {
-    return color(this.toolbarDefaultBg)
-      .darken(0.2)
-      .hex();
+    return this.brandPrimary
   },
   get darkenHeader() {
     return color(this.tabBgColor)
