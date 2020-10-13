@@ -10,7 +10,6 @@ import Spinner from 'react-native-spinkit'
 const Item = Picker.Item
 const timeIcon = (<MaterialIcons name="schedule" size={25} color="#000" />)
 const locationIcon = (<MaterialIcons name="place" size={25} color="#000" />)
-const searchIcon = (<MaterialIcons name="search" size={20} color="#fff" />)
 
 
 export default class Profile extends Component {
@@ -331,8 +330,7 @@ export default class Profile extends Component {
                         style={[styles.searchtour,{flexDirection:'row'}]}
                         onPress={() => this._searchJourneyTour()}
                         >
-                        {searchIcon}
-                        <Text style={[styles.searchtourtext,{marginLeft:8}]}>{this.state.settings.search}</Text>
+                        <Text style={[styles.searchtourtext,{marginLeft:8}]}>{this.state.settings.continue}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -375,7 +373,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         justifyContent:'center',
         alignItems:'center',
         height:50

@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
         borderRadius:7, 
         borderWidth:1, 
-        borderColor:'#003B93',
+        borderColor:'#030457',
     },
     viewProfile:{
         fontSize:16,
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
         paddingBottom: 7,
         borderBottomWidth:1,
         paddingLeft: 8,
-        borderBottomColor: '#003B93',
+        borderBottomColor: '#030457',
         fontFamily: 'Montserrat-SemiBold',
     },
     fonttext:{
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         justifyContent:'center',
         alignItems:'center',
         height:50

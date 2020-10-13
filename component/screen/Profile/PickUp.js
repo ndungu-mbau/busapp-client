@@ -448,7 +448,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         // justifyContent:'center',
         alignItems:'center',
         height:50
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         justifyContent:'center',
         alignItems:'center',
         height:50,

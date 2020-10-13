@@ -157,7 +157,7 @@ export default class JourneyDetails extends Component {
                 </View>
 
                 <View style={{flex:1}}>
-                  <Text style={[styles.secondTextVal, {color:'#003B93'}]}>{ value.fleet_seats + ' ' + this.state.settings.total_seats}</Text>
+                  <Text style={[styles.secondTextVal, {color:'#030457'}]}>{ value.fleet_seats + ' ' + this.state.settings.total_seats}</Text>
                   <Text style={[styles.secondTextVal, {color:(this.state.searchdataInfo.available[i] > 5) ? 'green' : 'red'}]}>{ this.state.searchdataInfo.available[i] + ' ' + this.state.settings.seats_available} </Text>
                 </View>
               </View>
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-SemiBold',
   },
   searchtour:{
-      backgroundColor:'#003B93',      
+      backgroundColor:'#030457',      
       // justifyContent:'center',
       alignItems:'center',
       height:50
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
   },
   bookbtn: {
     marginVertical:13,
-    backgroundColor:'#5B69BC',
+    backgroundColor:'#030457',
     color:'#fff', 
     paddingHorizontal:70, 
     paddingVertical:5, 

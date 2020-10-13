@@ -130,7 +130,7 @@ export default class ForgetPass extends Component {
 
 const styles = StyleSheet.create({
     loginHeader:{
-    backgroundColor: '#003B93'
+    backgroundColor: '#030457'
     },
     inputbox:{
     flex:1,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     },
     fontIcon:{
     fontSize: 20, 
-    color: '#003B93',
+    color: '#030457',
     paddingVertical:10, 
     paddingHorizontal:15
     },
@@ -174,12 +174,12 @@ const styles = StyleSheet.create({
     marginTop:2
     },
     loginbtn:{
-    backgroundColor:'#003B93',
+    backgroundColor:'#030457',
     fontSize: 20,
     borderRadius: 8,
     marginTop:(Dimensions.get('window').height <= '600' ? 15 : 20),
     marginBottom:(Dimensions.get('window').height <= '600' ? 15 : 20),
-    borderColor: '#003B93',
+    borderColor: '#030457',
     borderWidth: 2,
     alignItems:"center"
     },
@@ -204,22 +204,22 @@ const styles = StyleSheet.create({
     width:'45%', 
     marginRight:'10%', 
     borderWidth:2, 
-    borderColor:'#003B93',
+    borderColor:'#030457',
     borderRadius:5,
     },
     fbicon:{
     fontSize: 22, 
-    color: '#003B93',
+    color: '#030457',
     paddingVertical:10, 
     paddingHorizontal:19, 
-    backgroundColor:'#003B93',
+    backgroundColor:'#030457',
     color:'#fff'
     },
     lbtntext:{
     fontSize:18, 
     paddingTop:9, 
     paddingLeft:18, 
-    color:'#003B93',
+    color:'#030457',
     fontFamily: 'ZCOOLXiaoWei-Regular'
     },
     gmaillogin:{
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     },
     lockicon:{
     fontSize: 20, 
-    color: '#003B93',
+    color: '#030457',
     paddingVertical:10, 
     paddingHorizontal:19
     }

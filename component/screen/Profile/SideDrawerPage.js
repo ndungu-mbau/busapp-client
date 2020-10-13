@@ -144,7 +144,7 @@ export default class SideDrawerPage extends Component {
                   </View>
             </View>
         </View>
-        <View style={{ backgroundColor: '#003B93', flex:2,justifyContent:'center', alignItems:'center' }} >
+        <View style={{ backgroundColor: '#030457', flex:2,justifyContent:'center', alignItems:'center' }} >
           <View style={{justifyContent:'center', alignItems:'center' }}>
             <Text style={[styles.monsemibold,{color:'#fff', justifyContent:'center', alignItems:'center', fontSize:17 }]}>Developed by ELLIXAR</Text>
           </View>
@@ -157,7 +157,7 @@ export default class SideDrawerPage extends Component {
 const styles = StyleSheet.create({
     logoBack:{
         height: 240,
-        backgroundColor: '#003B93',
+        backgroundColor: '#030457',
         justifyContent:'center', 
       },
       renderItem:{

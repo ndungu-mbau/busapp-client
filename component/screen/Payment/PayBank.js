@@ -146,11 +146,11 @@ export default class PayBank extends Component {
 
                     { (this.state.bank != '') ? <View style={{marginBottom:10}}>
                             <View style={{marginBottom:8}}>
-                                <Text style={[styles.locationDet,{color:'#003B93', marginBottom:10}]}>{this.state.settings.bank_information} :</Text>
+                                <Text style={[styles.locationDet,{color:'#030457', marginBottom:10}]}>{this.state.settings.bank_information} :</Text>
                                 {this._getbankdet()}
                             </View>
                         </View> 
-                        : <View><Text style={{color:'#003B93', fontSize:16, marginBottom:20,fontFamily: 'Montserrat-SemiBold',marginLeft:7}}>{this.state.settings.select_your_bank_first}</Text></View> }
+                        : <View><Text style={{color:'#030457', fontSize:16, marginBottom:20,fontFamily: 'Montserrat-SemiBold',marginLeft:7}}>{this.state.settings.select_your_bank_first}</Text></View> }
                         
 
                         <View style={{marginBottom:10}}>
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         
         alignItems:'center',
         height:50
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     },
     fontIcon:{
         fontSize: 20, 
-        color: '#003B93',
+        color: '#030457',
         paddingVertical:10, 
         paddingHorizontal:15
     },

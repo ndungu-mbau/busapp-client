@@ -11,7 +11,7 @@ class MyListItem extends Component {
     };
   
     render() {
-      const textColor = this.props.selected ? "#194F9E" : "#9E9E9E";
+      const textColor = this.props.selected ? "#030457" : "#9E9E9E";
       return (
         <TouchableOpacity style={{paddingVertical:15, paddingHorizontal:12, backgroundColor:textColor, margin:5, width:50}} onPress={this._onPress}>
           <View>
@@ -140,7 +140,7 @@ export default class SeatPlan extends Component {
                 title={item.name}
               />
         }else{
-            return  <View style={{paddingVertical:15, paddingHorizontal:12, backgroundColor:'#E65100', margin:5, width:50}}>
+            return  <View style={{paddingVertical:15, paddingHorizontal:12, backgroundColor:'#030457', margin:5, width:50}}>
                         <Text style={{ color: '#fff',fontFamily: 'Montserrat-SemiBold', fontSize:13 }}>
                             {item.name}
                         </Text>
@@ -163,23 +163,23 @@ export default class SeatPlan extends Component {
             let countP = ((this.props.navigation.state.params.pickup.adult *1) + (this.props.navigation.state.params.pickup.child*1) + (this.props.navigation.state.params.pickup.special*1))
 
             return <View style={[styles.AllDataVal,{marginBottom:20}]}>
-                <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.adult_price.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{':  ' + this.state.seatdataInfo.prices.price  + ((countP <3) ? (this.state.data.adult == '') ? ' ' : ' * ' + this.state.data.adult : ' ')}  </Text>
                     </View>
-                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.child_price.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{':  ' + this.state.seatdataInfo.prices.children_price  +  ((countP <3) ? (this.state.data.child == '') ? ' ' : ' * ' + this.state.data.child : ' ') }  </Text>
                     </View>
-                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.special_price.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{':  ' + this.state.seatdataInfo.prices.special_price  +  ((countP <3) ? (this.state.data.special == '') ? ' ' : ' * ' + this.state.data.special : ' ') }  </Text>
                     </View>
-                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.group_price.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{':  ' + this.state.seatdataInfo.prices.group_price_per_person  +  ((countP >= 3) ? ' * ' + countP : ' ') }  </Text>
                     </View>
-                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.total.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{':  ' + this.state.total }  </Text>
                     </View>
@@ -276,7 +276,7 @@ export default class SeatPlan extends Component {
                 </View>
 
                 <View style={styles.AllDataVal}>
-                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#003B93',}}>
+                    <View style={{flexDirection:'row',padding:10, backgroundColor:'#030457',}}>
                         <Text style={{flex:2,fontFamily: 'Montserrat-SemiBold',fontSize:15,alignItems:'flex-start', justifyContent:'flex-start', color:'#fff'}}>{this.state.settings.seat_layout.toUpperCase()}</Text>
                         <Text style={{flex:1, fontFamily: 'Montserrat-Regular',fontSize:15,alignItems:'flex-end', justifyContent:'flex-end',color:'#fff'}}>{this.state.data.data.fleet_seats + '  '+ this.state.settings.seats.toUpperCase() }  </Text>
                     </View>
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         // justifyContent:'center',
         alignItems:'center',
         height:50

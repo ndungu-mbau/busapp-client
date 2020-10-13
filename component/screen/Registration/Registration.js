@@ -235,7 +235,7 @@ export default class Registration extends Component {
 
 const styles = StyleSheet.create({
   loginHeader:{
-    backgroundColor: '#003B93'
+    backgroundColor: '#030457'
   },
   inputbox:{
     flex:1,
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
   },
   fontIcon:{
     fontSize: 20, 
-    color: '#003B93',
+    color: '#030457',
     paddingVertical:10, 
     paddingHorizontal:15
   },
@@ -280,12 +280,12 @@ const styles = StyleSheet.create({
     marginTop:2
   },
   regbtn:{
-    backgroundColor:'#003B93',
+    backgroundColor:'#030457',
     fontSize: 20,
     borderRadius: 8,
     marginTop:(Dimensions.get('window').height <= '600' ? 15 : 20),
     marginBottom:(Dimensions.get('window').height <= '600' ? 15 : 20),
-    borderColor: '#003B93',
+    borderColor: '#030457',
     borderWidth: 2,
     alignItems:"center"
   },
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
   },
   lockicon:{
     fontSize: 20, 
-    color: '#003B93',
+    color: '#030457',
     paddingVertical:10, 
     paddingHorizontal:19
   }

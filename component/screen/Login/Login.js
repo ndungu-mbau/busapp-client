@@ -230,7 +230,7 @@ export default class Login extends Component {
                   <Text
                     style={{
                       fontSize: 16,
-                      color: '#003B93',
+                      color: '#030457',
                       fontFamily: 'Montserrat-SemiBold',
                     }}>
                     {this.state.settings.register}
@@ -248,7 +248,7 @@ export default class Login extends Component {
                   <Text
                     style={{
                       fontSize: 16,
-                      color: '#003B93',
+                      color: '#030457',
                       fontFamily: 'Montserrat-SemiBold',
                     }}>
                     {this.state.settings.forgot_password}
@@ -275,7 +275,7 @@ export default class Login extends Component {
 
 const styles = StyleSheet.create({
   loginHeader: {
-    backgroundColor: '#003B93',
+    backgroundColor: '#030457',
   },
   inputbox: {
     flex: 1,
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
   },
   fontIcon: {
     fontSize: 20,
-    color: '#003B93',
+    color: '#030457',
     paddingVertical: 10,
     paddingHorizontal: 15,
   },
@@ -320,7 +320,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Regular',
   },
   loginbtn: {
-    backgroundColor: '#003B93',
+    backgroundColor: '#030457',
     fontSize: 20,
     borderRadius: 5,
     marginTop: Dimensions.get('window').height <= '600' ? 15 : 20,
@@ -348,22 +348,22 @@ const styles = StyleSheet.create({
     width: '45%',
     marginRight: '10%',
     borderWidth: 2,
-    borderColor: '#003B93',
+    borderColor: '#030457',
     borderRadius: 5,
   },
   fbicon: {
     fontSize: 23,
-    color: '#003B93',
+    color: '#030457',
     paddingVertical: 11,
     paddingHorizontal: 19,
-    backgroundColor: '#003B93',
+    backgroundColor: '#030457',
     color: '#fff',
   },
   lbtntext: {
     fontSize: 16,
     paddingTop: 9,
     paddingLeft: 18,
-    color: '#003B93',
+    color: '#030457',
     fontFamily: 'Montserrat-SemiBold',
   },
   gmaillogin: {
@@ -388,7 +388,7 @@ const styles = StyleSheet.create({
   },
   lockicon: {
     fontSize: 20,
-    color: '#003B93',
+    color: '#030457',
     paddingVertical: 10,
     paddingHorizontal: 19,
   },

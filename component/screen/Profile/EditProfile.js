@@ -251,7 +251,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{this.state.settings.email}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.email}
                                 value = {this.state.email}
                                 editable={false} 
@@ -262,7 +262,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{`${this.state.settings.first_name} *`}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.first_name}
                                 value = {this.state.fname}
                                 onChangeText = {(text) => this.setState({fname : text})}
@@ -272,7 +272,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{`${this.state.settings.last_name} *`}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.last_name}
                                 value = {this.state.lname}
                                 onChangeText = {(text) => this.setState({lname : text})}
@@ -282,7 +282,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{this.state.settings.phone}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.phone}
                                 value = {this.state.ephone}
                                 onChangeText = {(text) => this.setState({ephone : text})}
@@ -292,7 +292,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{this.state.settings.address}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.address}
                                 value = {this.state.eaddress}
                                 onChangeText = {(text) => this.setState({eaddress : text})}
@@ -302,7 +302,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{this.state.settings.password}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {this.state.settings.password}
                                 value = {this.state.password}
                                 onChangeText = {(text) => this.setState({password : text})}
@@ -312,7 +312,7 @@ export default class EditProfile extends Component {
                         <View style={{ paddingVertical:5}}>
                             <Text style={styles.fonttext}>{`Old ${this.state.settings.password} *`}</Text>
                             <TextInput
-                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#003B93', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
+                                style={{backgroundColor:'#e3e3e3', borderWidth:1, borderColor:'#030457', paddingVertical:3,paddingHorizontal:15, marginVertical:7 }}
                                 placeholder = {`Old ${this.state.settings.password}`}
                                 value = {this.state.old_password}
                                 onChangeText = {(text) => this.setState({old_password : text})}
@@ -322,7 +322,7 @@ export default class EditProfile extends Component {
                         <View style={{paddingTop:10, paddingBottom:25}}>
 
                             <TouchableOpacity
-                                style={{width:'100%', borderRadius:5, justifyContent:'center', alignItems:'center', backgroundColor:'#003B93',paddingVertical:8}}
+                                style={{width:'100%', borderRadius:5, justifyContent:'center', alignItems:'center', backgroundColor:'#030457',paddingVertical:8}}
                                 onPress={()=> this._saveProfile()}>
                                 <Text style={[styles.fonttext,{color:'#fff'}]}>{this.state.settings.save_profile.toUpperCase()}</Text>
                             </TouchableOpacity>
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
         borderRadius:7, 
         borderWidth:1, 
-        borderColor:'#003B93',
+        borderColor:'#030457',
     },
     viewProfile:{
         fontSize:16,
@@ -403,7 +403,7 @@ const styles = StyleSheet.create({
         paddingBottom: 7,
         borderBottomWidth:1,
         paddingLeft: 8,
-        borderBottomColor: '#003B93',
+        borderBottomColor: '#030457',
         fontFamily: 'Montserrat-SemiBold',
     },
     fonttext:{
@@ -418,7 +418,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     searchtour:{
-        backgroundColor:'#003B93',      
+        backgroundColor:'#030457',      
         justifyContent:'center',
         alignItems:'center',
         height:50
