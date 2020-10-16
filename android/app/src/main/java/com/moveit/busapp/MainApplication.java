@@ -1,4 +1,4 @@
-package com.moveit.busapp;
+package com.liquidcoach.app;
 
 import android.app.Application;
 import android.content.Context;
